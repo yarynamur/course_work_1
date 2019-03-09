@@ -5,7 +5,11 @@ We are going to analyse dependence of price of corporate securities of film comp
 Requirements.
 ------------------------
 Python 3.4+
+
 json
+
 datetime
+
 intrinio_sdk
+
 matplotlib
