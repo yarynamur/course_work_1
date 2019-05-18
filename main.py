@@ -14,6 +14,10 @@ found_years = {'DIS': 1962, 'MGM': 1990, 'TWX': 1992, 'FOX': 1987,
 
 
 def build_stock_gdp():
+    """
+    Creates graphic of stock prices of 8 companies and GDP of USA
+    >>> build_stock_gdp()
+    """
     axes = []
     for comp in found_years:
         x = np.arange(found_years[comp], 2019)
@@ -68,6 +72,10 @@ def build_stock_gdp():
 
 
 def build_stock_boxoffice():
+    """
+    Creates graphic of stock prices of 8 companies and their box offices
+    >>> build_stock_boxoffice()
+    """
     axes = []
     for comp in found_years:
         stock_pr = []
@@ -129,6 +137,10 @@ def build_stock_boxoffice():
 
 
 def build_gdp_boxoffice():
+    """
+    Creates graphic of box offices of 8 companies and GDP of USA
+    >>> build_gdp_boxoffice()
+    """
     axes = []
     for comp in found_years:
         x1 = np.arange(found_years[comp], 2019)
