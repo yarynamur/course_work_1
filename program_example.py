@@ -2,6 +2,10 @@ from main import build_stock_gdp, build_stock_boxoffice, build_gdp_boxoffice
 
 
 def print_beginning():
+    '''
+    () -> None
+    Prints an introduction.
+    '''
     print('Hello, this is our research that shows dependance between')
     print('economic state in the USA and success of cinematography.')
     print('There are three parameteres we have analyzed:')
@@ -16,6 +20,9 @@ def print_beginning():
 
 
 def choose_func(num):
+    '''
+    Calls a function that draw a graphic depending on function's argument.
+    '''
     if num == '1':
         build_stock_boxoffice()
     if num == '2':
@@ -25,6 +32,9 @@ def choose_func(num):
 
 
 def main():
+    '''
+    Calls functions that are responsible for introduction and graphic building.
+    '''
     print_beginning()
     num = ''
     while num != 'exit':
