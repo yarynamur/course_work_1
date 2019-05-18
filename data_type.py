@@ -6,7 +6,14 @@ quandl.ApiConfig.api_key = 'rH3PSfJfH94wkuv_RCgt'
 
 
 class MoviesFull:
+    """
+    Class to handle dictionaries of companies stock prices and movies' box offices
+    """
+
     def __init__(self, year):
+        '''
+        Initializing
+        '''
         self.year = year
         self.movies = MoviesBase(year)
         self.movies.set_movies_dict()
@@ -17,6 +24,9 @@ class MoviesFull:
         self.set_prices()
 
     def stock_price(self, company, year, month):
+        """
+        Finds stock price in given year and month
+        """
         data = quandl.get_table('WIKI/PRICES', ticker=[company],
                                 qopts={'columns': [
                                     'ticker', 'date', 'adj_close']},
@@ -29,6 +39,9 @@ class MoviesFull:
             outf.write(str(clean_data))
 
     def get_month_stock_price(self, company, year, month):
+        """
+        Founds sotck price in given month
+        """
         try:
             self.stock_price(company, year, month)
             average_stock = 0
@@ -47,6 +60,9 @@ class MoviesFull:
             return False
 
     def year_stock_price(self, company):
+        """
+        Finds stock price in given year
+        """
         monthly = []
         for month in range(12):
             try:
@@ -70,6 +86,9 @@ class MoviesFull:
             return None
 
     def set_prices(self):
+        """
+        Sets prices in dictionary (attribute)
+        """
         for comp in self.stock_pr:
             if int(self.year) >= self.found_year[comp]:
                 self.stock_pr[comp] = self.year_stock_price(comp)
